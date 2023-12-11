@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for bikes-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.0.Beta1/mapstruct-processor-1.6.0.Beta1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.6.0.Beta1/mapstruct-1.6.0.Beta1.jar" />
+        </processorPath>
+        <module name="bikes-migration" />
+        <module name="bikes-domain" />
+        <module name="bikes-application" />
+        <module name="bikes-infrastructure" />
+        <module name="bikes-api-rest" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bikes-api" target="17" />
+      <module name="bikes-api-rest" target="17" />
+      <module name="bikes-application" target="17" />
+      <module name="bikes-domain" target="17" />
+      <module name="bikes-infrastructure" target="17" />
+      <module name="bikes-migration" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bikes-api" options="-parameters" />
+      <module name="bikes-api-rest" options="-parameters" />
+      <module name="bikes-application" options="-parameters" />
+      <module name="bikes-domain" options="-parameters" />
+      <module name="bikes-infrastructure" options="-parameters" />
+      <module name="bikes-migration" options="-parameters" />
+    </option>
+  </component>
+</project>

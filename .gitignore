@@ -1,0 +1,79 @@
+# IntelliJ
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+target/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# Maven Wrapper
+.mvn/wrapper/
+
+# Compiled Java classes
+*.class
+
+# Compiled Java modules
+mods/
+
+# Dependency directories
+bin/
+lib/
+
+# IntelliJ files
+*.iml
+*.ipr
+*.iws
+
+
+# Compiled bytecode
+*.class
+*.jar
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Gradle
+.gradle/
+build/
+
+# Spring Boot
+spring-boot-starter-parent/
+
+# Test reports
+test-output/
+
+# IDE (IntelliJ, Eclipse) configuration files
+.settings/
+*.launch
+*.classpath
+*.project
+
+# Thumbnails
+Thumbs.db
+ehthumbs.db
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Maven #
+log/
+target/
+.mvn/
+
+
+# Other #
+*.log
+*.lock
+*.backup
+*.swp

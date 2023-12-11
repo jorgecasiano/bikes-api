@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bikes-api.iml" filepath="$PROJECT_DIR$/.idea/bikes-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bikes-api-rest/bikes-api-rest.iml" filepath="$PROJECT_DIR$/bikes-api-rest/bikes-api-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bikes-application/bikes-application.iml" filepath="$PROJECT_DIR$/bikes-application/bikes-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bikes-domain/bikes-domain.iml" filepath="$PROJECT_DIR$/bikes-domain/bikes-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bikes-infrastructure/bikes-infrastructure.iml" filepath="$PROJECT_DIR$/bikes-infrastructure/bikes-infrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bikes-migration/bikes-migration.iml" filepath="$PROJECT_DIR$/bikes-migration/bikes-migration.iml" />
+    </modules>
+  </component>
+</project>

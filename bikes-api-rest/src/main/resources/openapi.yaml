@@ -1,0 +1,196 @@
+openapi: 3.0.0
+info:
+  title: Bike API
+  version: 1.0.0
+paths:
+  /bikes:
+    post:
+      summary: Insert a new bike
+      operationId: createBike
+      requestBody:
+        description: Bike information including components
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BikeRequest'
+      responses:
+        '201':
+          description: Bike created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bike'
+    get:
+      summary: Search for bikes
+      operationId: searchBikes
+      parameters:
+        - name: name
+          in: query
+          description: Filter by bike name
+          schema:
+            type: string
+        - name: manufacturer
+          in: query
+          description: Filter by manufacturer name
+          schema:
+            type: string
+        - name: item_type
+          in: query
+          description: Filter by item type
+          schema:
+            type: string
+        - name: manufacturer_id
+          in: query
+          description: Filter by manufacturer id
+          schema:
+            type: number
+            format: int32
+        - name: item_type_id
+          in: query
+          description: Filter by item type id
+          schema:
+            type: number
+            format: int32
+        - name: order
+          in: query
+          description: Filter by item type
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Pagination page
+          schema:
+            type: number
+            format: int32
+        - name: size
+          in: query
+          description: Pagination size
+          schema:
+            type: number
+            format: int32
+      responses:
+        '200':
+          description: Successful response with a list of bikes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BikesResponse'
+components:
+  schemas:
+    BikeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+        currency:
+          type: string
+        manufacturer_id:
+          type: number
+        existing_items:
+          type: array
+          items:
+            type: number
+        new_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemRequest'
+      required:
+        - name
+        - price
+        - currency
+        - manufacturer
+    ItemRequest:
+      type: object
+      properties:
+        model:
+          type: string
+        type_id:
+          type: number
+        description:
+          type: string
+      required:
+        - model
+        - type_id
+    BikesResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bike'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Bike:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+        currency:
+          type: string
+        manufacturer:
+          $ref: '#/components/schemas/Manufacturer'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+      required:
+        - name
+        - price
+        - currency
+        - manufacturer
+        - items
+    Item:
+      type: object
+      properties:
+        id:
+          type: number
+        model:
+          type: string
+        type_id:
+          type: number
+        type:
+          type: string
+        description:
+          type: string
+      required:
+        - id
+        - model
+        - type_id
+    Manufacturer:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+      required:
+        - id
+        - name
+    Pagination:
+      type: object
+      properties:
+        total_items:
+          type: number
+          format: int32
+        total_pages:
+          type: number
+          format: int32
+        current_page:
+          type: number
+          format: int32
+        size:
+          type: number
+          format: int32
